@@ -7,27 +7,6 @@
 
 import UIKit
 
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
-
 class HeroViewController: UIViewController {
 
     @IBOutlet weak var heroImg: UIImageView!
@@ -36,17 +15,17 @@ class HeroViewController: UIViewController {
     @IBOutlet weak var attackLbl: UILabel!
     @IBOutlet weak var legsLbl: UILabel!
     
-    var hero: HeroStats?
+    var newlist: List?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLbl.text = hero?.localized_name
-        attackLbl.text = hero?.attack_type
-        attributeLbl.text = hero?.primary_attr
-        legsLbl.text = "\((hero?.legs)!)"
+        nameLbl.text = "\(String(describing: newlist?.albumId))"
+        attackLbl.text = "\(String(describing: newlist?.id))"
+        attributeLbl.text = newlist?.title
+        legsLbl.text = newlist?.url
         
-        let urlImage = "https://api.opendota.com" + hero!.img
+        let urlImage = newlist!.url
         heroImg.downloaded(from: urlImage)
     }
 

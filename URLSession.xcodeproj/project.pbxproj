@@ -15,7 +15,9 @@
 		D17AED5E28C9C53500F9D885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17AED5D28C9C53500F9D885 /* Assets.xcassets */; };
 		D17AED6128C9C53500F9D885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17AED5F28C9C53500F9D885 /* LaunchScreen.storyboard */; };
 		D17AED6928C9C7AD00F9D885 /* HeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17AED6828C9C7AD00F9D885 /* HeroViewController.swift */; };
-		D17AED6B28C9C85800F9D885 /* HeroStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17AED6A28C9C85800F9D885 /* HeroStats.swift */; };
+		D17AED6B28C9C85800F9D885 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17AED6A28C9C85800F9D885 /* List.swift */; };
+		D1A0322428CADCFF00D695AC /* postJSon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0322328CADCFF00D695AC /* postJSon.swift */; };
+		D1A0322628CAF0C300D695AC /* downloadJSon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0322528CAF0C300D695AC /* downloadJSon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +31,9 @@
 		D17AED6028C9C53500F9D885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D17AED6228C9C53500F9D885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D17AED6828C9C7AD00F9D885 /* HeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewController.swift; sourceTree = "<group>"; };
-		D17AED6A28C9C85800F9D885 /* HeroStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroStats.swift; sourceTree = "<group>"; };
+		D17AED6A28C9C85800F9D885 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		D1A0322328CADCFF00D695AC /* postJSon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postJSon.swift; sourceTree = "<group>"; };
+		D1A0322528CAF0C300D695AC /* downloadJSon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = downloadJSon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,7 @@
 		D125473C28C9DFA6001ABD19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D17AED6A28C9C85800F9D885 /* HeroStats.swift */,
+				D17AED6A28C9C85800F9D885 /* List.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -64,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				D125473E28C9E087001ABD19 /* getJSon.swift */,
+				D1A0322328CADCFF00D695AC /* postJSon.swift */,
+				D1A0322528CAF0C300D695AC /* downloadJSon.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -172,8 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D125473F28C9E087001ABD19 /* getJSon.swift in Sources */,
+				D1A0322428CADCFF00D695AC /* postJSon.swift in Sources */,
+				D1A0322628CAF0C300D695AC /* downloadJSon.swift in Sources */,
 				D17AED6928C9C7AD00F9D885 /* HeroViewController.swift in Sources */,
-				D17AED6B28C9C85800F9D885 /* HeroStats.swift in Sources */,
+				D17AED6B28C9C85800F9D885 /* List.swift in Sources */,
 				D17AED5928C9C53400F9D885 /* ViewController.swift in Sources */,
 				D17AED5528C9C53400F9D885 /* AppDelegate.swift in Sources */,
 				D17AED5728C9C53400F9D885 /* SceneDelegate.swift in Sources */,

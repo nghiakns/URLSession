@@ -14,23 +14,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        getJSon {
-            self.tableView.reloadData()
-            print("success")
-        }
+//        getJSon {
+//            self.tableView.reloadData()
+//            print("success")
+//        }
         tableView.delegate = self
         tableView.dataSource = self
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return heros.count
+        return newlists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        let hero = heros[indexPath.row]
-        cell.textLabel?.text = hero.localized_name.capitalized
-        cell.detailTextLabel?.text = hero.attack_type.capitalized
+        let newlist = newlists[indexPath.row]
+        cell.textLabel?.text = "\(newlist.id)"
+        cell.detailTextLabel?.text = newlist.title.capitalized
         
         return cell
     }
@@ -41,9 +41,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? HeroViewController {
-            destination.hero = heros[tableView.indexPathForSelectedRow!.row]
+            destination.newlist = newlists[tableView.indexPathForSelectedRow!.row]
         }
     }
-
+    
+    @IBAction func GET(_ sender: Any) {
+        getJSon {
+            self.tableView.reloadData()
+            print("get JSon success")
+        }
+    }
+    
+    @IBAction func POST(_ sender: Any) {
+        postJSon {
+            self.tableView.reloadData()
+            print("post JSon success")
+        }
+        
+    }
+    
 }
 
